@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+    <h2>Add Subject</h2>
+<form method="post" novalidate>
+{% csrf_token %}
+{% include 'includes/form.html' %}
+    <button type="submit" class="btn btn-info btn-sm">Add Subject</button>
+<a href="{% url 'subject_list' %}" class="btn btn-outline-dark btn-sm" role="button">Not Now</a>
+
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+  <h2 class="mb-3">Confirm deletion</h2>
+  <p class="lead">Are you sure you want to delete the post <strong>"{{ question.name }}"</strong>? There is no going back.</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger"><i class="fa fa-check" style="font-size: 24px"></i> </button>
+    <a href="{% url 'question_list' question.topic.subject.pk question.topic.pk%}"  role="button"><i class="fas fa-undo" style="font-size:24px"></i></a>
+
+  </form>
+{% endblock %}

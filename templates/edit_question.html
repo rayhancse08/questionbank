@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+    <h2>Add Question</h2>
+<form method="post" novalidate>
+{% csrf_token %}
+{% include 'includes/form.html' %}
+    <button type="submit" class="btn btn-info btn-sm">Edit Question</button>
+<a href="{% url 'question_list' question.topic.subject.pk question.topic.pk %}" class="btn btn-outline-dark btn-sm" role="button">Not Now</a>
+
+</form>
+
+
+
+{% endblock %}
+
+
+

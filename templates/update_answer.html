@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+    <h2>Update Answer</h2>
+<form method="post" novalidate>
+{% csrf_token %}
+{% include 'includes/form.html' %}
+    <button type="submit" class="btn btn-primary">Update Answer</button>
+<a href="{% url 'question_list' answer.question.topic.subject.pk answer.question.topic.pk %}" class="btn btn-outline-dark" role="button">Not Now</a>
+
+</form>
+
+
+
+{% endblock %}
