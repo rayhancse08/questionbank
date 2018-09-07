@@ -82,11 +82,11 @@ WSGI_APPLICATION = 'questionbank.wsgi.application'
 DATABASES = {
 'default': {
     'ENGINE': 'django.db.backends.postgresql',
-    'NAME': 'questionbank',
-    'HOST': '127.0.0.1',
+    'NAME': 'd3q7v1bb8l8uld',
+    'HOST': 'ec2-54-227-244-12.compute-1.amazonaws.com',
     'PORT': '5432',
-    'USER': 'postgres',
-    'PASSWORD': 'rayhan0820',
+    'USER': 'mslzmvbmsgalzb',
+    'PASSWORD': '3e26110ca0da7be9a6871ce1d372fb6720ad2b73c5299b93a4ef6f01cb9a9640',
 
 }}
 
