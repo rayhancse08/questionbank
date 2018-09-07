@@ -14,7 +14,7 @@ from django.http import JsonResponse
 @method_decorator(login_required,name='dispatch')
 class CreateSubjectView(CreateView):
     form_class = SubjectForm
-    template_name = 'add_subject.html '
+    template_name = 'add_subject.html'
     success_url = reverse_lazy('subject_list')
 
 
