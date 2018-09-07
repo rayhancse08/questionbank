@@ -15,8 +15,9 @@
 {% block content %}
    <div class="row">
     <div class="col-sm-12">
-
+        {% if user.is_authenticated %}
         <a href="{% url 'create_question' topic.subject.pk topic.pk %}" class="btn btn-primary btn-sm" role="button"><i class="fa fa-plus-circle"> Add Question</i></a>
+   {% endif %}
     </div>
     </div>
     <br>
@@ -34,8 +35,12 @@
   <div id="{{ question.pk }}" class="collapse">
 
    {% for item  in question.answers.all %}
-    {{ item.answer|linebreaks }} <a href="{% url 'answer_update' question.topic.subject.pk question.topic.pk question.pk item.pk%}"><i class="fa fa-edit" style="font-size: 18px"></i></a>
-    {% endfor %}
+
+    {{ item.answer|linebreaks }}
+       {% if user.is_authenticated %}
+       <a href="{% url 'answer_update' question.topic.subject.pk question.topic.pk question.pk item.pk%}"><i class="fa fa-edit" style="font-size: 18px"></i></a>
+     {% endif %}
+   {% endfor %}
   </div>
 
 
